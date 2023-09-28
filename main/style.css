@@ -190,7 +190,6 @@ header {
      color: red;
 }
 
-
 .section_3_text_contaier {
      display: flex;
      justify-content: center;
@@ -214,6 +213,10 @@ header {
      margin-right: 10px;
 }
 
+.main-text-header p {
+     margin-top: 15px;
+}
+
 .main-text-header {
      margin-top: 68px;
      margin-right: 70px;
@@ -232,7 +235,6 @@ header {
      display: flex;
      justify-content: center;
      align-items: center;
-     width: 100%; 
      margin-top: 12px;
      margin-left: 40px;
 }
