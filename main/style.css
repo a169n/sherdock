@@ -13,6 +13,11 @@
 
 }
 
+body::-webkit-scrollbar {
+     width: 0;
+}
+
+
 section {
      padding-top: 80px;
      padding-bottom: 80px;
@@ -78,7 +83,7 @@ select {
      border-radius: 5px;
 }
 
-button {
+#submit-btn {
      background-color: #007BFF;
      color: #fff;
      border: none;
@@ -87,7 +92,7 @@ button {
      cursor: pointer;
 }
 
-button:hover {
+#submit-btn:hover {
      background-color: #0056b3;
 }
 
@@ -95,4 +100,20 @@ button:hover {
      margin-top: 20px;
      font-weight: bold;
      color: #007BFF;
+}
+
+
+.countdown-item {
+     text-align: center;
+}
+
+.countdown-value {
+     font-size: 56px;
+     color: #007BFF;
+     font-weight: 500;
+}
+
+.countdown-label {
+     font-size: 20px;
+     color: #333;
 }
