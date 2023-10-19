@@ -19,23 +19,35 @@ function scrollToTop() {
      });
 }
 
-const form = document.getElementById("hospitalizationForm");
-const submissionResult = document.getElementById("submissionResult");
-
-form.addEventListener("submit", function (event) {
+function validateForm() {
      event.preventDefault();
 
-     submissionResult.textContent = "Форма успешно отправлена!";
+     let patientName = document.getElementById("patientName");
+     let patientAge = document.getElementById("patientAge");
+     let reasonForHospitalization = document.getElementById("reasonForHospitalization");
+     let admissionDate = document.getElementById("admissionDate");
+     let contactNumber = document.getElementById("contactNumber");
 
-     setTimeout(function () {
-          submissionResult.textContent = "";
-     }, 3000);
+     if (patientName.value === "" || patientAge.value === "" || reasonForHospitalization.value === "" || admissionDate.value === "" || contactNumber.value === "") {
+          let errorMessage = document.getElementById("errorMessage");
+          errorMessage.style.display = "block";
+          document.getElementById("closeError").style.display = "block";
 
-     form.reset();
+          errorMessage.scrollIntoView();
+     } else {
+          document.getElementById("myForm").reset();
+          alert("Форма успешно отправлена!");
+
+          document.getElementById("submissionResult").textContent = "";
+     }
+}
+
+document.getElementById("closeError").addEventListener("click", function () {
+     document.getElementById("errorMessage").style.display = "none";
+     this.style.display = "none";
 });
 
 const discountEndDate = new Date('2023-10-22T23:59:59');
-
 
 function updateCountdown() {
      const currentDate = new Date();
