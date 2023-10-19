@@ -233,7 +233,7 @@
                     </div>
                </div>
           </section>
-          <section class="countdown-timer" style="border:#004A9B 3px dashed;">
+          <section class="countdown-timer mb-5" style="border:#004A9B 3px outset;">
                <p class="text-center w-50 mx-auto" style="font-size: 18px; line-height: 170%;">Успейте воспользоваться
                     нашей акцией! До окончания скидки осталось совсем немного. Не упустите шанс
                     получить товары по выгодным ценам. Спешите, время истекает! 🕒</p>
@@ -273,30 +273,34 @@
                     </div>
                </div>
           </section>
-          <section class="section6">
-               <h1 class="text-center mb-5" style="color: #004A9B;"><b>Заявление о госпитализации</b></h1>
-               <form id="hospitalizationForm" action="#">
-                    <label for="patientName">Имя Пациента:</label>
-                    <input type="text" id="patientName" name="patientName" required>
-                    <label for="patientAge">Возраст:</label>
-                    <input type="number" id="patientAge" name="patientAge" required>
-                    <label for="reasonForHospitalization">Причина госпитализации:</label>
-                    <textarea id="reasonForHospitalization" name="reasonForHospitalization" rows="4"
-                         required></textarea>
-                    <label for="admissionDate">Дата поступления:</label>
-                    <input type="date" id="admissionDate" name="admissionDate" required>
-                    <label for="roomPreference">Тип комнаты:</label>
-                    <select id="roomPreference" name="roomPreference">
-                         <option value="single">Одиночная комната</option>
-                         <option value="double">Двойная комната</option>
-                         <option value="ward">Палата</option>
-                    </select>
-                    <label for="contactNumber">Контактный номер:</label>
-                    <input type="number" id="contactNumber" name="contactNumber" required>
-                    <button id="submit-btn" type="submit">Отправить</button>
-               </form>
-               <div id="submissionResult"></div>
-          </section>
+          <h1 class="text-center mb-5"><b>Заявление о госпитализации</b></h1>
+          <form name="myForm" id="myForm" onsubmit="return validateForm();">
+               <label for="patientName">Имя Пациента: <span style="color: red;">*</span></label>
+               <input type="text" id="patientName" name="patientName">
+               <label for="patientAge">Возраст: <span style="color: red;">*</span></label>
+               <input type="number" id="patientAge" name="patientAge">
+               <label for="reasonForHospitalization">Причина госпитализации: <span style="color: red;">*</span></label>
+               <textarea id="reasonForHospitalization" name="reasonForHospitalization" rows="4"></textarea>
+               <label for="admissionDate">Дата поступления: <span style="color: red;">*</span></label>
+               <input type="date" id="admissionDate" name="admissionDate">
+               <label for="roomPreference">Тип комнаты:</label>
+               <select id="roomPreference" name="roomPreference">
+                    <option value="single">Одиночная комната</option>
+                    <option value="double">Двойная комната</option>
+                    <option value="ward">Палата</option>
+               </select>
+               <label for="contactNumber">Контактный номер: <span style="color: red;">*</span></label>
+               <input type="number" id="contactNumber" name="contactNumber">
+               <button id="submit-btn" type="submit">Отправить</button>
+          </form>
+          <div class="d-flex justify-content-center mx-auto mt-2">
+               <div id="errorMessage" class="error-message text-center p-2" style="font-size: 18px; display: none;">
+                    Заполните все обязательные поля
+                    <button id="closeError" class="close-button mx-auto m-1 mt-2"
+                         style="font-size: 16px;">Закрыть</button>
+               </div>
+          </div>
+
           <hr class="mt-5 border-2 border-black">
      </main>
      <script src="script.js"></script>
