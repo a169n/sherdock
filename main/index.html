@@ -233,38 +233,70 @@
                     </div>
                </div>
           </section>
+          <section class="countdown-timer" style="border:#004A9B 3px dashed;">
+               <p class="text-center w-50 mx-auto" style="font-size: 18px; line-height: 170%;">Успейте воспользоваться
+                    нашей акцией! До окончания скидки осталось совсем немного. Не упустите шанс
+                    получить товары по выгодным ценам. Спешите, время истекает! 🕒</p>
+               <div class="d-flex mx-auto justify-content-around">
+                    <div>
+                         <img src="/pictures/dicsount-icon.png" alt="dicsount-icon" width="150" height="150">
+                    </div>
+                    <div class="row mt-3">
+                         <div class="col-md countdown-item">
+                              <div class="countdown-value" id="days">00</div>
+                              <div class="countdown-label">День</div>
+                         </div>
+                         <div class="col-md countdown-item text-center">
+                              <div class="countdown-value">:</div>
+                         </div>
+                         <div class="col-md countdown-item">
+                              <div class="countdown-value" id="hours">00</div>
+                              <div class="countdown-label">Час</div>
+                         </div>
+                         <div class="col-md countdown-item text-center">
+                              <div class="countdown-value">:</div>
+                         </div>
+                         <div class="col-md countdown-item">
+                              <div class="countdown-value" id="minutes">00</div>
+                              <div class="countdown-label">Минут</div>
+                         </div>
+                         <div class="col-md countdown-item text-center">
+                              <div class="countdown-value">:</div>
+                         </div>
+                         <div class="col-md countdown-item">
+                              <div class="countdown-value" id="seconds">00</div>
+                              <div class="countdown-label">Секунд</div>
+                         </div>
+                    </div>
+                    <div>
+                         <img src="/pictures/hospital-icon.jpg" alt="hospital-icon" width="150" height="150">
+                    </div>
+               </div>
+          </section>
           <section class="section6">
                <h1 class="text-center mb-5" style="color: #004A9B;"><b>Заявление о госпитализации</b></h1>
                <form id="hospitalizationForm" action="#">
                     <label for="patientName">Имя Пациента:</label>
                     <input type="text" id="patientName" name="patientName" required>
-
                     <label for="patientAge">Возраст:</label>
                     <input type="number" id="patientAge" name="patientAge" required>
-
                     <label for="reasonForHospitalization">Причина госпитализации:</label>
                     <textarea id="reasonForHospitalization" name="reasonForHospitalization" rows="4"
                          required></textarea>
-
                     <label for="admissionDate">Дата поступления:</label>
                     <input type="date" id="admissionDate" name="admissionDate" required>
-
                     <label for="roomPreference">Тип комнаты:</label>
                     <select id="roomPreference" name="roomPreference">
                          <option value="single">Одиночная комната</option>
                          <option value="double">Двойная комната</option>
                          <option value="ward">Палата</option>
                     </select>
-
                     <label for="contactNumber">Контактный номер:</label>
                     <input type="number" id="contactNumber" name="contactNumber" required>
-
-                    <button type="submit">Отправить</button>
+                    <button id="submit-btn" type="submit">Отправить</button>
                </form>
-
                <div id="submissionResult"></div>
           </section>
-
           <hr class="mt-5 border-2 border-black">
      </main>
      <script src="script.js"></script>
