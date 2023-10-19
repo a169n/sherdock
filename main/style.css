@@ -10,6 +10,7 @@
 
 * {
      font-family: Gotham Pro;
+
 }
 
 section {
@@ -23,4 +24,75 @@ section {
 
 .black-link:hover {
      color: blue;
+}
+
+.scrollTop {
+     display: none;
+     position: fixed;
+     bottom: 30px;
+     right: 30px;
+     padding: 10px 15px;
+     background-color: #004A9B;
+     color: #fff;
+     border-radius: 15px;
+     cursor: pointer;
+     transition: background-color 0.3s, color 0.3s, display 0.3s;
+     border: 2px solid #004A9B;
+}
+
+.scrollTop:hover {
+     color: #004A9B;
+     background-color: #fff;
+}
+
+h1 {
+     color: #333;
+}
+
+form {
+     background-color: #fff;
+     border-radius: 8px;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+     width: 80%;
+     max-width: 400px;
+     margin: 0 auto;
+     padding: 20px;
+     text-align: left;
+}
+
+label {
+     display: block;
+     margin-bottom: 5px;
+     font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+textarea,
+select {
+     width: 100%;
+     padding: 10px;
+     margin-bottom: 15px;
+     border: 1px solid #ccc;
+     border-radius: 5px;
+}
+
+button {
+     background-color: #007BFF;
+     color: #fff;
+     border: none;
+     padding: 10px 20px;
+     border-radius: 5px;
+     cursor: pointer;
+}
+
+button:hover {
+     background-color: #0056b3;
+}
+
+#submissionResult {
+     margin-top: 20px;
+     font-weight: bold;
+     color: #007BFF;
 }
