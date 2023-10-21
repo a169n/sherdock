@@ -47,7 +47,7 @@ document.getElementById("closeError").addEventListener("click", function () {
      this.style.display = "none";
 });
 
-const discountEndDate = new Date('2023-10-22T23:59:59');
+const discountEndDate = new Date('2023-10-25T23:59:59');
 
 function updateCountdown() {
      const currentDate = new Date();
@@ -68,5 +68,28 @@ function updateCountdown() {
      }
 }
 
-updateCountdown();
 setInterval(updateCountdown, 1000);
+updateCountdown();
+
+const images = ["/pictures/clinic1.jpg", "/pictures/clinic2.jpg", "/pictures/clinic3.jpg", "/pictures/clinic4.jpg", "/pictures/clinic5.jpg"];
+let currentIndex = 0;
+
+const sliderImage = document.getElementById("slider-image");
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+
+nextBtn.addEventListener("click", () => {
+     currentIndex = (currentIndex + 1) % images.length;
+     updateSliderImage();
+});
+
+prevBtn.addEventListener("click", () => {
+     currentIndex = (currentIndex - 1 + images.length) % images.length;
+     updateSliderImage();
+});
+
+function updateSliderImage() {
+     sliderImage.src = images[currentIndex];
+}
+
+updateSliderImage();

@@ -63,7 +63,7 @@ form {
      margin: 0 auto;
      padding: 20px;
      text-align: left;
-     
+
 }
 
 label {
@@ -111,6 +111,27 @@ select {
      padding: 10px 20px;
      border-radius: 5px;
      cursor: pointer;
+}
+
+.slider-container {
+     position: relative;
+     width: 400px;
+     margin: 0 auto;
+     overflow: hidden;
+}
+
+.slider {
+     display: flex;
+     transition: all 0.5s;
+}
+
+.slider img {
+     width: 400px;
+     height: 300px;
+}
+
+.btn {
+     margin: 10px;
 }
 
 #submit-btn:hover {
