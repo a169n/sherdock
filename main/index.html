@@ -75,7 +75,7 @@
                </div>
           </nav>
      </header>
-     <div class="scrollTop" onclick="scrollToTop()">Top</div>
+     <div class="scrollTop" onclick="scrollToTop()" style="z-index: 99;">Top</div>
      <main class="container">
           <section class="mt-5 pt-5">
                <div class="container">
@@ -238,9 +238,13 @@
                     нашей акцией! До окончания скидки осталось совсем немного. Не упустите шанс
                     получить товары по выгодным ценам. Спешите, время истекает! 🕒</p>
                <div class="d-flex mx-auto justify-content-around">
-                    <div>
-                         <img src="/pictures/dicsount-icon.png" alt="dicsount-icon" width="150" height="150">
+                    <div class="d-flex mx-auto justify-content-around">
+                         <div class="col-md-12 col-sm-6">
+                              <img src="/pictures/dicsount-icon.png" alt="discount-icon" class="img-fluid" width="150"
+                                   height="150">
+                         </div>
                     </div>
+
                     <div class="row mt-3">
                          <div class="col-md countdown-item">
                               <div class="countdown-value" id="days">00</div>
@@ -268,11 +272,34 @@
                               <div class="countdown-label">Секунд</div>
                          </div>
                     </div>
-                    <div>
-                         <img src="/pictures/hospital-icon.jpg" alt="hospital-icon" width="150" height="150">
+                    <div class="d-flex mx-auto justify-content-around">
+                         <div class="col-md-12 col-sm-6">
+                              <img src="/pictures/hospital-icon.jpg" alt="hospital-icon" class="img-fluid" width="150"
+                                   height="150">
+                         </div>
                     </div>
                </div>
           </section>
+          <section>
+               <div class="container">
+                    <div class="row">
+                         <div class="col-md-8 offset-md-2">
+                              <div id="slider-container" class="slider-container">
+                                   <div class="slider">
+                                        <img id="slider-image" src="/pictures/clinic1.jpg" alt="clinic 1" class="img-fluid">
+                                        <img id="slider-image" src="/pictures/clinic2.jpeg" alt="clinic 2" class="img-fluid">
+                                        <img id="slider-image" src="/pictures/clinic3.jpg" alt="clinic 3" class="img-fluid">
+                                        <img id="slider-image" src="/pictures/clinic4.jpg" alt="clinic 4" class="img-fluid">
+                                        <img id="slider-image" src="/pictures/clinic5.jpg" alt="clinic 5" class="img-fluid">
+                                   </div>
+                                   <button id="prev" class="btn">Previous</button>
+                                   <button id="next" class="btn">Next</button>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </section>
+
           <h1 class="text-center mb-5"><b>Заявление о госпитализации</b></h1>
           <form name="myForm" id="myForm" onsubmit="return validateForm();">
                <label for="patientName">Имя Пациента: <span style="color: red;">*</span></label>
