@@ -281,24 +281,22 @@
                </div>
           </section>
           <section>
-               <div class="container">
-                    <div class="row">
-                         <div class="col-md-8 offset-md-2">
-                              <div id="slider-container" class="slider-container">
-                                   <div class="slider">
-                                        <img id="slider-image" src="/pictures/clinic1.jpg" alt="clinic 1" class="img-fluid">
-                                        <img id="slider-image" src="/pictures/clinic2.jpeg" alt="clinic 2" class="img-fluid">
-                                        <img id="slider-image" src="/pictures/clinic3.jpg" alt="clinic 3" class="img-fluid">
-                                        <img id="slider-image" src="/pictures/clinic4.jpg" alt="clinic 4" class="img-fluid">
-                                        <img id="slider-image" src="/pictures/clinic5.jpg" alt="clinic 5" class="img-fluid">
-                                   </div>
-                                   <button id="prev" class="btn">Previous</button>
-                                   <button id="next" class="btn">Next</button>
-                              </div>
+               <p class="text-center" style="color: #004A9B; font-size: 24px;"><b>Наши клиники-партнеры:</b></p>
+               <div class="d-flex align-items-center">
+                    <button id="prev" class="btn btn-outline-dark">Previous</button>
+                    <div class="slider-container">
+                         <div class="slider" id="imageSlider">
+                              <img src="/pictures/clinic1.jpg" alt="clinic 1" class="img-fluid">
+                              <img src="/pictures/clinic2.jpeg" alt="clinic 2" class="img-fluid">
+                              <img src="/pictures/clinic3.jpg" alt="clinic 3" class="img-fluid">
+                              <img src="/pictures/clinic4.jpg" alt="clinic 4" class="img-fluid">
+                              <img src="/pictures/clinic5.jpg" alt="clinic 5" class="img-fluid">
                          </div>
                     </div>
+                    <button id="next" class="btn btn-outline-dark">Next</button>
                </div>
           </section>
+
 
           <h1 class="text-center mb-5"><b>Заявление о госпитализации</b></h1>
           <form name="myForm" id="myForm" onsubmit="return validateForm();">
@@ -327,14 +325,20 @@
                          style="font-size: 16px;">Закрыть</button>
                </div>
           </div>
-
-          <hr class="mt-5 border-2 border-black">
+          <section class="faqs">
+               <div class="faq-container">
+                    <h1 class="text-center mb-4" style="color: #004A9B;">Часто задаваемые вопросы:</h1>
+                    <div class="faq-accordion" id="faq-accordion">
+                    </div>
+               </div>
+          </section>
+          <hr class="border-2 border-black">
      </main>
      <script src="script.js"></script>
 </body>
 <footer class="container py-5 text-center" id="footer">
      <div class="row">
-          <div class="col-md-4 mt-5">
+          <div class="col-md-4">
                <h3 class="text-left">Пишите/Звоните</h3>
                <ul class="list-unstyled">
                     <li class="mt-4"><img src="../pictures/viber.png" alt="viber-icon" width="32" height="32">
