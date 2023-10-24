@@ -142,13 +142,13 @@ const faqData = [{
 
 const faqAccordion = document.getElementById('faq-accordion');
 
-faqData.forEach((faq, index) => {
+faqData.forEach((faq) => {
      const faqItem = document.createElement('div');
      faqItem.classList.add('faq-item');
 
      const question = document.createElement('div');
      question.classList.add('faq-question');
-     question.textContent = `${index + 1}.${faq.question}`;
+     question.textContent = faq.question;
 
      const answer = document.createElement('div');
      answer.classList.add('faq-answer');

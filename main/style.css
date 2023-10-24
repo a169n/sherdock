@@ -62,14 +62,14 @@ section {
      background-color: #f0f0f0;
      padding: 10px;
      cursor: pointer;
-     transition: background-color 0.3s;
+     transition: background-color 0.3s, max-height 0.5s;
 }
 
 .faq-answer {
      max-height: 0;
      padding: 0 10px;
      overflow: hidden;
-     transition: max-height 0.3s;
+     transition: max-height 1s;
 }
 
 .faq-item:hover .faq-question {
