@@ -15,9 +15,21 @@ window.addEventListener("scroll", function () {
 function scrollToTop() {
      window.scrollTo({
           top: 0,
-          behavior: "smooth"
      });
 }
+
+function scrollErrorMessageToCenter() {
+     let errorMessage = document.getElementById("errorMessage");
+
+     const windowHeight = window.innerHeight;
+     const errorMessageHeight = errorMessage.offsetHeight;
+     const scrollPosition = (errorMessage.offsetTop - (windowHeight - errorMessageHeight) / 2);
+
+     window.scrollTo({
+          top: scrollPosition
+     });
+}
+
 
 function validateForm() {
      event.preventDefault();
@@ -27,13 +39,14 @@ function validateForm() {
      let reasonForHospitalization = document.getElementById("reasonForHospitalization");
      let admissionDate = document.getElementById("admissionDate");
      let contactNumber = document.getElementById("contactNumber");
+     let errorMessage = document.getElementById("errorMessage");
+     let errorMessageBtn = document.getElementById("closeError");
 
      if (patientName.value === "" || patientAge.value === "" || reasonForHospitalization.value === "" || admissionDate.value === "" || contactNumber.value === "") {
-          let errorMessage = document.getElementById("errorMessage");
           errorMessage.style.display = "block";
-          document.getElementById("closeError").style.display = "block";
+          errorMessageBtn.style.display = "block";
 
-          errorMessage.scrollIntoView();
+          scrollErrorMessageToCenter();
      } else {
           document.getElementById("myForm").reset();
           alert("Форма успешно отправлена!");
@@ -44,10 +57,17 @@ function validateForm() {
 
 document.getElementById("closeError").addEventListener("click", function () {
      document.getElementById("errorMessage").style.display = "none";
-     this.style.display = "none";
 });
 
 const discountEndDate = new Date('2023-10-25T23:59:59');
+
+function formatNumberWithLeadingZero(number) {
+     if (number < 10) {
+          return '0' + number;
+     } else {
+          return String(number);
+     }
+}
 
 function updateCountdown() {
      const currentDate = new Date();
@@ -61,10 +81,10 @@ function updateCountdown() {
           const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
           const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-          document.getElementById("days").textContent = String(days).padStart(2, '0');
-          document.getElementById("hours").textContent = String(hours).padStart(2, '0');
-          document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
-          document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+          document.getElementById("days").textContent = formatNumberWithLeadingZero(days);
+          document.getElementById("hours").textContent = formatNumberWithLeadingZero(hours);
+          document.getElementById("minutes").textContent = formatNumberWithLeadingZero(minutes);
+          document.getElementById("seconds").textContent = formatNumberWithLeadingZero(seconds);
      }
 }
 
@@ -95,7 +115,7 @@ prevBtn.addEventListener("click", () => {
 });
 
 function updateSliderImage() {
-     imageSlider.innerHTML = `<img src="${images[currentIndex]}" alt="clinic ${currentIndex + 1}" class="img-fluid">`;
+     imageSlider.innerHTML = `<img src="${images[currentIndex]}" alt="clinic ${currentIndex + 1}">`;
 }
 
 const faqData = [{
@@ -128,15 +148,11 @@ faqData.forEach((faq, index) => {
 
      const question = document.createElement('div');
      question.classList.add('faq-question');
-     question.textContent = `${index + 1}. ${faq.question}`;
+     question.textContent = `${index + 1}.${faq.question}`;
 
      const answer = document.createElement('div');
      answer.classList.add('faq-answer');
      answer.textContent = faq.answer;
-
-     question.addEventListener('click', () => {
-          answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-     });
 
      faqItem.appendChild(question);
      faqItem.appendChild(answer);
