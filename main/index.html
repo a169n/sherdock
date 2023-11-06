@@ -64,17 +64,121 @@
                                         </p>
                                    </a>
                               </li>
-                              <li class="nav-item col-md-3" style="margin-top: 5px;">
+
+
+                              <!-- Trigger/Open The Modal -->
+                              <button id="myCustomBtn">Registration</button>
+
+                              <!-- The Registration Modal -->
+                              <div id="myCustomModal" class="my-modal">
+                                   <!-- Modal content -->
+                                   <div class="my-modal-content">
+                                        <div class="my-modal-header">
+                                             <span class="my-close" id="closeCustomModal">&times;</span>
+                                             <h2>Registration</h2>
+                                        </div>
+                                        <div class="my-modal-body">
+                                             <img class="img-fluid d-block mx-auto" src="../pictures/Слой 2.png"
+                                                  alt="Image">
+                                             <!-- Registration form -->
+                                             <!-- Registration form -->
+                                             <!-- Registration form -->
+                                             <form id="registrationForm">
+                                                  <div class="form-group">
+                                                       <label for="reg-username">Full name:</label>
+                                                       <input type="text" id="reg-username" name="reg-username"
+                                                            required>
+                                                       <div class="text-danger" id="reg-username-error"></div>
+                                                       <!-- Error message for Full name -->
+                                                  </div>
+
+                                                  <div class="form-group">
+                                                       <label for="reg-email">Email:</label><br>
+                                                       <input type="email" id="reg-email" name="reg-email" required>
+                                                       <div class="text-danger" id="reg-email-error"></div>
+                                                       <!-- Error message for Email -->
+                                                  </div>
+
+                                                  <div class="form-group">
+                                                       <label for="reg-age">Age:</label>
+                                                       <input type="number" id="reg-age" name="reg-age" required>
+                                                       <div class="text-danger" id="reg-age-error"></div>
+                                                       <!-- Error message for Age -->
+                                                  </div>
+
+                                                  <div class="form-group">
+                                                       <label for="reg-password">Password:</label><br>
+                                                       <input type="password" id="reg-password" name="reg-password"
+                                                            required>
+                                                       <div class="text-danger" id="reg-password-error"></div>
+                                                       <!-- Error message for Password -->
+                                                  </div>
+                                                  <br><br>
+
+                                                  <button type="submit">Register</button>
+                                             </form>
+                                             <p class="text-danger" id="registration-error-message"></p>
+                                             <!-- General error message -->
+                                        </div>
+                                        <div class="my-modal-footer">
+                                             <h3>SHERDOCK</h3>
+                                        </div>
+                                   </div>
+                              </div>
+
+                              <!-- Button to open the Login modal -->
+                              <button id="openLoginModal">Login</button>
+
+                              <!-- The Login Modal -->
+                              <div id="loginModal" class="my-modal">
+                                   <!-- Modal content -->
+                                   <div class="my-modal-content">
+                                        <div class="my-modal-header">
+                                             <span class="my-close" id="closeLoginModal">&times;</span>
+                                             <h2>Login</h2>
+                                        </div>
+                                        <div class="my-modal-body">
+                                             <img class="img-fluid d-block mx-auto" src="../pictures/Слой 2.png"
+                                                  alt="Image">
+                                             <!-- Login form -->
+                                             <form id="loginForm">
+                                                  <label for="login-username">Username:</label>
+                                                  <input type="text" id="login-username" name="login-username" required>
+                                                  <p class="text-danger" id="login-username-error"></p>
+                                                  <!-- Error message for Username -->
+
+                                                  <label for="login-password">Password:</label>
+                                                  <input type="password" id="login-password" name="login-password"
+                                                       required>
+                                                  <p class="text-danger" id="login-password-error"></p>
+                                                  <!-- Error message for Password -->
+                                                  <br><br>
+
+                                                  <button type="submit">Login</button>
+                                             </form>
+                                             <p class="text-danger" id="login-error-message"></p>
+                                             <!-- General error message -->
+                                        </div>
+                                        <div class="my-modal-footer">
+                                             <h3>SHERDOCK</h3>
+                                        </div>
+                                   </div>
+                              </div>
+
+
+
+                              <!-- <li class="nav-item col-md-3" style="margin-top: 5px;">
                                    <p class="text-secondary m-0">Перейти на сайт:</p>
                                    <a class="text-decoration-none" href="https://mail.google.com/" target="_blank">
                                         <p class="text-primary m-0">SherDoc<span class="text-danger">.ru</span></p>
                                    </a>
-                              </li>
+                              </li> -->
                          </ul>
                     </div>
                </div>
           </nav>
      </header>
+
      <div class="scrollTop" onclick="scrollToTop()" style="z-index: 99;">Top</div>
      <main class="container">
           <section class="mt-5 pt-5">
@@ -310,7 +414,7 @@
                </select>
                <label for="contactNumber">Контактный номер: <span style="color: red;">*</span></label>
                <input type="number" id="contactNumber" name="contactNumber">
-               <button id="submit-btn" type="submit">Отправить</button>
+               <button class="submit-btn" type="submit">Отправить</button>
           </form>
           <div class="d-flex justify-content-center mx-auto mt-2">
                <div id="errorMessage" class="error-message text-center p-2" style="font-size: 18px; display: none;">
@@ -324,12 +428,13 @@
                <div class="faq-container">
                     <h1 class="text-center mb-4" style="color: #000">Frequently Asked Questions:</h1>
                     <div class="faq-accordion" id="faq-accordion">
-                         
+
                     </div>
                </div>
           </section>
           <hr class="border-3 border-black">
      </main>
+
      <script src="script.js"></script>
 </body>
 <footer class="container py-5 text-center" id="footer">

@@ -135,7 +135,7 @@ select {
      cursor: pointer;
 }
 
-#submit-btn {
+.submit-btn {
      background-color: #007BFF;
      color: #fff;
      border: none;
@@ -180,4 +180,164 @@ select {
 .countdown-label {
      font-size: 20px;
      color: #333;
+}
+
+/* Modal */
+#myCustomBtn {
+     background-color: #007BFF;
+     color: #fff;
+     border: none;
+     padding: 10px 20px;
+     border-radius: 5px;
+     cursor: pointer;
+}
+
+.my-modal {
+     display: none;
+     /* Hidden by default */
+     position: fixed;
+     /* Stay in place */
+     z-index: 1;
+     /* Sit on top */
+     padding-top: 100px;
+     /* Location of the box */
+     left: 0;
+     top: 0;
+     width: 100%;
+     /* Full width */
+     height: 100%;
+     /* Full height */
+     overflow: auto;
+     /* Enable scroll if needed */
+     background-color: rgba(0, 0, 0, 0.4);
+     /* Black w/ opacity */
+}
+
+/* Modal Content */
+.my-modal-content {
+     position: relative;
+     background-color: #fefefe;
+     margin: auto;
+     border: 1px solid #888;
+     width: 50%;
+     /* Adjust the width as needed */
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+     border-radius: 10px;
+     -webkit-animation-name: animatetop;
+     -webkit-animation-duration: 0.4s;
+     animation-name: animatetop;
+     animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+     from {
+          top: -300px;
+          opacity: 0
+     }
+
+     to {
+          top: 0;
+          opacity: 1
+     }
+}
+
+@keyframes animatetop {
+     from {
+          top: -300px;
+          opacity: 0
+     }
+
+     to {
+          top: 0;
+          opacity: 1
+     }
+}
+
+
+/* The Close Button */
+.my-close {
+     color: black;
+     float: right;
+     font-size: 28px;
+     font-weight: bold;
+     margin-right: 20px;
+}
+
+.my-close:hover,
+.my-close:focus {
+     color: white;
+     text-decoration: none;
+     cursor: pointer;
+}
+
+.my-modal-header {
+     padding: 10px 0;
+     background-color: #cce8ef;
+     color: black;
+     border-radius: 10px 10px 0 0;
+     text-align: center;
+}
+
+.my-modal-body {
+     padding: 10px 0;
+     display: flex;
+}
+
+.my-modal-footer {
+     padding: 10px 0;
+     background-color: #cce8ef;
+     color: black;
+     border-radius: 0 0 10px 10px;
+     text-align: center;
+}
+
+/* Adjust the registration form's width to 100% */
+#registrationForm {
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: start;
+
+}
+
+#registrationForm button {
+     background-color: #cce8ef;
+     color: black;
+     border: none;
+     padding: 10px 20px;
+     border-radius: 5px;
+     cursor: pointer;
+}
+
+#loginForm button {
+     background-color: #cce8ef;
+     color: black;
+     border: none;
+     padding: 10px 20px;
+     border-radius: 5px;
+     cursor: pointer;
+}
+
+/* Add styles for the Login modal */
+#openLoginModal {
+     background-color: #007BFF;
+     color: #fff;
+     border: none;
+     padding: 10px 20px;
+     border-radius: 5px;
+     cursor: pointer;
+}
+
+#loginModal {
+     display: none;
+}
+
+/* You can use the existing styles for .my-modal, .my-modal-content, .my-close, etc. */
+
+#loginForm {
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: start;
 }
