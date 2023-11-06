@@ -1,0 +1,30 @@
+/* General Section Styles */
+section {
+     padding-top: 80px;
+     padding-bottom: 80px;
+}
+
+/* Link Styles */
+.black-link {
+     color: black;
+}
+
+.black-link:hover {
+     color: blue;
+}
+
+/* Heading Styles */
+h1 {
+     color: #004A9B;
+}
+
+/* Custom Button Styles */
+#myCustomBtn {
+     background-color: #007BFF;
+     color: #fff;
+     border: none;
+     padding: 10px 20px;
+     border-radius: 5px;
+     cursor: pointer;
+     font-size: 12px;
+}

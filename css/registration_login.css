@@ -1,0 +1,46 @@
+/* Form Styles */
+#registrationForm {
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: start;
+}
+
+#registrationForm button {
+     background-color: #cce8ef;
+     color: black;
+     border: none;
+     padding: 10px 20px;
+     border-radius: 5px;
+     cursor: pointer;
+}
+
+#loginForm button {
+     background-color: #cce8ef;
+     color: black;
+     border: none;
+     padding: 10px 20px;
+     border-radius: 5px;
+     cursor: pointer;
+}
+
+#openLoginModal {
+     background-color: #007BFF;
+     color: #fff;
+     border: none;
+     padding: 10px 20px;
+     border-radius: 5px;
+     cursor: pointer;
+     font-size: 12px;
+}
+
+#loginModal {
+     display: none;
+}
+
+#loginForm {
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     justify-content: start;
+}
