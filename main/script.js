@@ -159,7 +159,7 @@ faqData.forEach((faq, index) => {
      faqAccordion.appendChild(faqItem);
 });
 
-
+const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
 // Registration Modal
 var registrationModal = document.getElementById("myCustomModal");
@@ -286,7 +286,12 @@ registrationForm.addEventListener('submit', function (e) {
 
     // Clear the form for the next registration
     registrationForm.reset();
-    alert('Registration successful!');
+    var registrButton = document.getElementById('myCustomBtn');
+    if (registrButton) {
+      registrButton.style.display = 'none';
+    }
+    console.log(registrationData.fullName);
+    alert('Registration successful!'+ userData.fullName);
 
   });
 
@@ -346,11 +351,102 @@ loginForm.addEventListener('submit', function (e) {
 
   // Compare the entered username and password with data from registrationData
   const userFound = registrationData.some((user) => user.fullName === username && user.password === password);
-
-  if (userFound) {
-    alert('Welcome');
-    // You can add code to redirect the user to a logged-in area or perform other actions
-  } else {
-    alert('User not found')
+  if (username === "aibyn18" && password === "aibyn18") {
+    // Redirect to the admin page (replace 'admin.html' with the actual URL)
+    window.location.href = 'admin.html';
+    console.log(registrationData);
+    populateUserList();
+  } else if (userFound) {
+      alert('Welcome');
+      var loginButton = document.getElementById('openLoginModal');
+      if (loginButton) {
+        loginButton.style.display = 'none';
+      }
+      // You can add code to redirect regular users to a different page if needed
+      // window.location.href = 'regular-user-page.html';
+    }
+   else {
+    alert('User not found');
   }
 });
+function populateUserList() {
+  // Get a reference to the user list table
+  const userListTable = document.getElementById('userList').querySelector('tbody');
+
+  // Clear the existing table rows
+  userListTable.innerHTML = '';
+
+  // Loop through the registrationData array and add rows to the table
+  registrationData.forEach((userData) => {
+    const newRow = userListTable.insertRow();
+    const fullNameCell = newRow.insertCell(0);
+    const emailCell = newRow.insertCell(1);
+    const ageCell = newRow.insertCell(2);
+    const actionsCell = newRow.insertCell(3);
+
+    fullNameCell.textContent = userData.fullName;
+    emailCell.textContent = userData.email;
+    ageCell.textContent = userData.age;
+    // You can add actions (Edit or Delete buttons) in the actionsCell if needed.
+  });
+}
+
+// Call the populateUserList function to initially populate the table
+populateUserList();
+
+// // // Define a reference to the HTML table element
+// // const userListTable = document.getElementById('userList');
+
+// // // Function to populate the table with user data
+// // function populateTable() {
+// //   // Clear the existing table rows
+// //   userListTable.querySelector('tbody').innerHTML = '';
+
+// //   // Loop through the registrationData array and add rows to the table
+// //   registrationData.forEach((userData, index) => {
+// //     const newRow = userListTable.querySelector('tbody').insertRow();
+// //     const fullNameCell = newRow.insertCell(0);
+// //     const emailCell = newRow.insertCell(1);
+// //     const ageCell = newRow.insertCell(2);
+// //     const actionsCell = newRow.insertCell(3);
+
+// //     fullNameCell.textContent = userData.fullName;
+// //     emailCell.textContent = userData.email;
+// //     ageCell.textContent = userData.age;
+
+// //     // You can add actions like Edit or Delete buttons in the actionsCell if needed
+// //     // Example: actionsCell.innerHTML = '<button>Edit</button> <button>Delete</button>';
+// //   });
+// // }
+
+// // // Call the populateTable function to initially populate the table
+// // populateTable();
+// //  // Call the function to populate the user list when the page loads
+
+
+// function populateUserList() {
+//   const userList = document.getElementById('userList');
+
+//   if (registrationData.length === 0) {
+//     userList.style.display = 'none';
+//   } else {
+//     userList.style.display = 'table'; // Display the table
+//     userList.innerHTML = '';
+
+//     registrationData.forEach(user => {
+//       const row = document.createElement('tr');
+//       row.innerHTML = `
+//         <td>${user.fullName}</td>
+//         <td>${user.email}</td>
+//         <td>${user.age}</td>
+//         <td>
+//           <button onclick="editUser('${user.fullName}')">Edit</button>
+//           <button onclick="deleteUser('${user.fullName}')">Delete</button>
+//         </td>
+//       `;
+
+//       userList.appendChild(row);
+//     });
+  // }
+// }
+
