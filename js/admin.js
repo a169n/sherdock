@@ -1,38 +1,9 @@
+let registrationData = [];
+
 document.addEventListener('DOMContentLoaded', function () {
      const userDataContainer = document.getElementById('userData');
-     const registrationData = JSON.parse(localStorage.getItem('registrationData')) || [];
-
-     for (const user of registrationData) {
-          const row = document.createElement('tr');
-          const fullNameCell = document.createElement('td');
-          const emailCell = document.createElement('td');
-          const ageCell = document.createElement('td');
-          const actionsCell = document.createElement('td');
-          const editButton = document.createElement('button');
-          const deleteButton = document.createElement('button');
-
-          fullNameCell.textContent = user.fullName;
-          emailCell.textContent = user.email;
-          ageCell.textContent = user.age;
-
-          editButton.textContent = "Edit";
-          editButton.classList.add("edit");
-          editButton.addEventListener('click', () => editUser(user));
-
-          deleteButton.textContent = "Delete";
-          deleteButton.classList.add("delete");
-          deleteButton.addEventListener('click', () => deleteUser(user));
-
-          actionsCell.appendChild(editButton);
-          actionsCell.appendChild(deleteButton);
-
-          row.appendChild(fullNameCell);
-          row.appendChild(emailCell);
-          row.appendChild(ageCell);
-          row.appendChild(actionsCell);
-
-          userDataContainer.appendChild(row);
-     }
+     registrationData = JSON.parse(localStorage.getItem('registrationData')) || [];
+     updateTable();
 });
 
 function editUser(user) {
@@ -40,6 +11,7 @@ function editUser(user) {
      if (newName !== null) {
           user.fullName = newName;
           updateTable();
+          localStorage.setItem('registrationData', JSON.stringify(registrationData));
      }
 }
 
@@ -49,14 +21,15 @@ function deleteUser(user) {
           const index = registrationData.indexOf(user);
           if (index !== -1) {
                registrationData.splice(index, 1);
-               localStorage.setItem('registrationData', JSON.stringify(registrationData));
                updateTable();
+               localStorage.setItem('registrationData', JSON.stringify(registrationData));
           }
      }
 }
 
 function updateTable() {
-     userDataContainer.innerHTML = ''; // Clear the table 
+     const userDataContainer = document.getElementById('userData');
+     userDataContainer.innerHTML = '';
 
      for (const user of registrationData) {
           const row = document.createElement('tr');

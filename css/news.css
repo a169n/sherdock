@@ -1,0 +1,50 @@
+.news-filter {
+     text-align: center;
+     margin-bottom: 20px;
+}
+
+#filter-news {
+     margin-left: 10px;
+}
+
+.news-list {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+}
+
+.news-card {
+     width: 300px;
+     background-color: #f5f5f5;
+     border: 1px solid #ccc;
+     margin: 10px;
+     padding: 10px;
+     border-radius: 5px;
+}
+
+h2 {
+     font-size: 1.2em;
+     margin: 0;
+}
+
+p {
+     font-size: 1em;
+}
+
+#show-all-news {
+     margin-top: 20px;
+}
+
+#all-news-list {
+     display: none;
+}
+
+#all-news-list ul {
+     list-style: none;
+     padding: 0;
+}
+
+#all-news-list li {
+     margin-bottom: 10px;
+}
+

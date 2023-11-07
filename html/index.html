@@ -17,6 +17,7 @@
      <link rel="stylesheet" href="/css/scrollToTop.css">
      <link rel="stylesheet" href="/css/slider.css">
      <link rel="stylesheet" href="/css/styles.css">
+     <link rel="stylesheet" href="/css/news.css">
      <!-- Bootstrap CSS -->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -34,6 +35,7 @@
      <script src="/js/registration.js"></script>
      <script src="/js/login.js"></script>
      <script src="/js/localStorage.js"></script>
+     <script src="/js/news.js"></script>
      <!-- Bootstrap JS -->
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
@@ -369,7 +371,23 @@
                </div>
           </section>
           <section>
-               <div id="basket-menu"></div>
+               <div>
+                    <div class="news-filter">
+                         <label for="start-date-filter">Start Date:</label>
+                         <input type="date" id="start-date-filter">
+                         <label for="end-date-filter">End Date:</label>
+                         <input type="date" id="end-date-filter">
+                         <button id="filter-news" class="btn btn-primary">Filter</button>
+                    </div>
+                    <div class="news-list">
+                    </div>
+                    <div id="current-date">Current Date: <span id="current-date-value"></span></div>
+               </div>
+               <button id="show-all-news" class="btn btn-primary">Show All News</button>
+               <div id="all-news-list">
+                    <ul>
+                    </ul>
+               </div>
           </section>
           <hr class="border-1 mt-5 border-black my-5">
           <h1 class="text-center mb-5"><b>Заявление о госпитализации</b></h1>

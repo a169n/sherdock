@@ -10,7 +10,6 @@ function scrollErrorMessageToCenter() {
      });
 }
 
-
 function validateForm() {
      event.preventDefault();
 
