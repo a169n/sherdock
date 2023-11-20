@@ -31,17 +31,20 @@ h1 {
      transition: 0.3s;
 }
 
-.nav-icon{
+.nav-icon {
      transition: 0.3s;
 }
 
-.nav-icon:hover{
+.nav-icon:hover {
      transform: scale(102%);
      transition: 0.2s;
 }
 
-
-
 #mail-text:hover {
      text-decoration: underline;
+}
+
+.swiper {
+     width: 70%;
+     height: 600px;
 }
