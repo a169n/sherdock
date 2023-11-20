@@ -74,15 +74,12 @@ document.addEventListener("DOMContentLoaded", function () {
 function displayFormData() {
      const formDataSection = document.getElementById("formData");
 
-     // Retrieve data from localStorage
      const formData = JSON.parse(localStorage.getItem('formData')) || [];
 
-     // Create HTML elements for each entry and append them to the formDataSection
      formData.forEach((data, index) => {
           const formDataCard = document.createElement("div");
           formDataCard.classList.add("card", "m-3", "col-md-4");
 
-          // Create HTML content based on the data structure
           formDataCard.innerHTML = `
                <div class="card-body">
                     <h5 class="card-title">${data.patientName}</h5>
@@ -91,52 +88,23 @@ function displayFormData() {
                     <p class="card-text">Admission Date: ${data.admissionDate}</p>
                     <p class="card-text">Contact Number: ${data.contactNumber}</p>
                     <p class="card-text">Type of Room: ${data.roomPreference}</p>
-                    <button class="btn btn-primary edit-button" onclick="editFormData(${index})">Edit</button>
                     <button class="btn btn-danger delete-button" onclick="deleteFormData(${index})">Delete</button>
                </div>
           `;
 
-          // Append the formDataCard to the formDataSection
           formDataSection.appendChild(formDataCard);
      });
 }
 
-function editFormData(index) {
-     // Retrieve data from localStorage
-     const formData = JSON.parse(localStorage.getItem('formData')) || [];
-
-     // Retrieve the specific data entry
-     const dataToEdit = formData[index];
-
-     // Assuming you have a form for editing, you can populate the form fields with the dataToEdit
-     // For example, set the form field values using JavaScript:
-     document.getElementById("patientName").value = dataToEdit.patientName;
-     document.getElementById("patientAge").value = dataToEdit.patientAge;
-     document.getElementById("reasonForHospitalization").value = dataToEdit.reasonForHospitalization;
-     document.getElementById("admissionDate").value = dataToEdit.admissionDate;
-     document.getElementById("contactNumber").value = dataToEdit.contactNumber;
-     document.getElementById("roomPreference").value = dataToEdit.roomPreference;
-
-     // Optionally, scroll to the top of the form for better visibility
-     document.getElementById("myForm").scrollIntoView({
-          behavior: "smooth"
-     });
-}
-
 function deleteFormData(index) {
-     // Retrieve data from localStorage
      const formData = JSON.parse(localStorage.getItem('formData')) || [];
 
-     // Remove the specified data entry
      formData.splice(index, 1);
 
-     // Save the updated data back to localStorage
      localStorage.setItem('formData', JSON.stringify(formData));
 
-     // Clear the existing displayed cards
      const formDataSection = document.getElementById("formData");
      formDataSection.innerHTML = "";
 
-     // Redisplay the updated data
      displayFormData();
 }

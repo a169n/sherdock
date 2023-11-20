@@ -46,8 +46,12 @@ button {
 
 button.edit {
      background-color: #0d6efd;
+     margin-right: 5px;
+     border-radius: 5px;
 }
 
 button.delete {
      background-color: #f44336;
+     border-radius: 5px;
 }
+

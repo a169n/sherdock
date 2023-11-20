@@ -29,7 +29,6 @@ function validateForm() {
 
           scrollErrorMessageToCenter();
      } else {
-          // Create an object to store the form data
           const formData = {
                patientName: patientName.value,
                patientAge: patientAge.value,
@@ -38,13 +37,8 @@ function validateForm() {
                contactNumber: contactNumber.value,
                roomPreference: roomPreference.value
           };
-
-          // Send the data to localhost
-
-          // Save the data locally
           saveFormDataToLocal(formData);
 
-          // Reset the form
           document.getElementById("myForm").reset();
 
           alert("Form submitted successfully!");
@@ -55,13 +49,10 @@ function validateForm() {
 
 
 function saveFormDataToLocal(data) {
-     // Retrieve existing data from localStorage
      const existingData = JSON.parse(localStorage.getItem('formData')) || [];
 
-     // Add new data to the array
      existingData.push(data);
 
-     // Save the updated data back to localStorage
      localStorage.setItem('formData', JSON.stringify(existingData));
 }
 
