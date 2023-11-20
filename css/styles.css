@@ -18,13 +18,30 @@ h1 {
      color: #004A9B;
 }
 
-/* Custom Button Styles */
-#myCustomBtn {
-     background-color: #007BFF;
+
+#learn-more-btn {
+     transition: 0.3s;
+}
+
+#learn-more-btn:hover {
+     position: absolute;
+     background-color: #ee4444;
      color: #fff;
-     border: none;
-     padding: 10px 20px;
-     border-radius: 5px;
-     cursor: pointer;
-     font-size: 12px;
+     transform: scale(150%);
+     transition: 0.3s;
+}
+
+.nav-icon{
+     transition: 0.3s;
+}
+
+.nav-icon:hover{
+     transform: scale(102%);
+     transition: 0.2s;
+}
+
+
+
+#mail-text:hover {
+     text-decoration: underline;
 }

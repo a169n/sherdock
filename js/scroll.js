@@ -3,9 +3,9 @@ window.addEventListener("scroll", function () {
      let scrollToTopButton = document.querySelector(".scrollTop");
 
      if (window.pageYOffset > 600) {
-          scrollToTopButton.style.display = "block";
+          scrollToTopButton.style.opacity = 100;
      } else {
-          scrollToTopButton.style.display = "none";
+          scrollToTopButton.style.opacity  = 0;
      }
 });
 

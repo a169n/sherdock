@@ -24,6 +24,7 @@
      cursor: pointer;
 }
 
+#myCustomBtn,
 #openLoginModal {
      background-color: #007BFF;
      color: #fff;
@@ -32,6 +33,13 @@
      border-radius: 5px;
      cursor: pointer;
      font-size: 12px;
+     transition: 0.3s;
+}
+
+#myCustomBtn:hover,
+#openLoginModal:hover {
+     background-color: #0056b3;
+     transition: 0.2s;
 }
 
 #loginModal {
