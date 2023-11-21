@@ -99,12 +99,42 @@ function displayFormData() {
 function deleteFormData(index) {
      const formData = JSON.parse(localStorage.getItem('formData')) || [];
 
-     formData.splice(index, 1);
+     const confirmation = confirm('Are you sure you want to delete this form data?');
+     if (confirmation) {
+          formData.splice(index, 1);
 
-     localStorage.setItem('formData', JSON.stringify(formData));
+          localStorage.setItem('formData', JSON.stringify(formData));
 
-     const formDataSection = document.getElementById("formData");
-     formDataSection.innerHTML = "";
+          const formDataSection = document.getElementById("formData");
+          formDataSection.innerHTML = "";
 
-     displayFormData();
+          displayFormData();
+     }
+}
+
+
+
+var quizResults = JSON.parse(localStorage.getItem('quizResults')) || [];
+var quizResultsBody = document.getElementById('quizResults');
+quizResultsBody.innerHTML = '';
+
+quizResults.forEach(function (result, index) {
+     var row = document.createElement('tr');
+     row.innerHTML = `<td>${result.userName}</td>
+                         <td>${result.quizName}</td>
+                         <td>${result.timeTaken}</td>
+                         <td>${result.correctAnswersCount}</td>
+                         <td>
+                              <button class="btn btn-danger" onclick="deleteQuizResult(${index})">Delete</button>
+                         </td>`;
+     quizResultsBody.appendChild(row);
+});
+
+function deleteQuizResult(index) {
+     const confirmation = confirm('Are you sure you want to delete this quiz result?');
+     if (confirmation) {
+          quizResults.splice(index, 1);
+          localStorage.setItem('quizResults', JSON.stringify(quizResults));
+          location.reload();
+     }
 }

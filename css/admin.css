@@ -55,3 +55,24 @@ button.delete {
      border-radius: 5px;
 }
 
+.user-table {
+     margin-top: 20px;
+}
+
+.user-table th,
+.user-table td {
+     text-align: center;
+}
+
+.form-data {
+     margin-top: 20px;
+}
+
+.quiz-results {
+     margin-top: 20px;
+}
+
+.quiz-results th,
+.quiz-results td {
+     text-align: center;
+}

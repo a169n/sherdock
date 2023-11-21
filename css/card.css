@@ -1,14 +1,15 @@
-/* card styles */
 .card {
      border: 1px solid #ccc;
      border-radius: 10px;
      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
      width: fit-content;
      padding: 15px;
+
 }
 
 .card-body {
      padding: 1.25rem;
+
 }
 
 .card-title {
@@ -23,4 +24,8 @@
 .edit-button,
 .delete-button {
      margin-top: 10px;
+}
+
+.modal-lg {
+     max-width: 80%;
 }

@@ -35,10 +35,6 @@ h1 {
      transition: 0.3s;
 }
 
-.nav-icon:hover {
-     transform: scale(102%);
-     transition: 0.2s;
-}
 
 #mail-text:hover {
      text-decoration: underline;
