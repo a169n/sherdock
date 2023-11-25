@@ -114,12 +114,12 @@ function openQuizModal(quizTitle, questions) {
      questionsContainer.innerHTML = "";
      questions.forEach(function (q, index) {
           var questionHtml = `<div class="mb-3">
-           <label for="question${index + 1}" class="form-label">${q.question}</label>`;
-          q.options.forEach(function (option, optionIndex) {
-               questionHtml += `<div class="form-check">
-                <input class="form-check-input" type="radio" name="question${index + 1}" id="q${index + 1}Option${optionIndex + 1}" value="${option}">
-                <label class="form-check-label" for="q${index + 1}Option${optionIndex + 1}">${option}</label>
-           </div>`;
+               <label for="question${index + 1}" class="form-label">${q.question}</label>`;
+               q.options.forEach(function (option, optionIndex) {
+                    questionHtml += `<div class="form-check">
+                    <input class="form-check-input" type="radio" name="question${index + 1}" id="q${index + 1}Option${optionIndex + 1}" value="${option}">
+                    <label class="form-check-label" for="q${index + 1}Option${optionIndex + 1}">${option}</label>
+               </div>`;
           });
           questionHtml += `</div>`;
           questionsContainer.innerHTML += questionHtml;
@@ -144,20 +144,16 @@ function openQuizModal(quizTitle, questions) {
           var quizModal = bootstrap.Modal.getInstance(document.getElementById('quizModal'));
           quizModal.hide();
 
-          // Clear previous event listeners
           document.getElementById('quizForm').removeEventListener('submit', onSubmit);
 
-          // Clear the timer interval
           clearInterval(timer);
 
           alert("Quiz completed! Number of correct answers is: " + correctAnswersCount + "/" + questions.length);
 
-          // Clear the previous quiz results before displaying new ones
           quizResultsBody.innerHTML = "";
           displayQuizResults();
      }
 
-     // Timer logic
      timer = setInterval(function () {
           timeLeft++;
           document.getElementById('timeLeft').innerText = timeLeft;

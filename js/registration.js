@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', function () {
           const username = regUsername.value;
           const usernameError = document.getElementById('reg-username-error');
 
-          if (username.length < 5) {
-               usernameError.textContent = 'Full name must be at least 5 characters long.';
+          if (username.length < 3) {
+               usernameError.textContent = 'Full name must be at least 3 characters long.';
           } else {
                usernameError.textContent = '';
           }
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
           const age = regAge.value;
           const password = regPassword.value;
 
-          if (username.length < 5 || !email.match(emailPattern) || isNaN(age) || age < 18 || password.length < 6) {
+          if (username.length < 3 || !email.match(emailPattern) || isNaN(age) || age < 18 || password.length < 6) {
                registrationErrorMessage.textContent = 'Please correct the errors in the form.';
                e.preventDefault();
           } else {

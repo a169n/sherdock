@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', function () {
      function validateLoginUsername() {
           const username = loginUsername.value;
           const loginUsernameError = document.getElementById('login-username-error');
-          if (username.length < 5) {
-               loginUsernameError.textContent = 'Full name must be at least 5 characters long.';
+          if (username.length < 3) {
+               loginUsernameError.textContent = 'Full name must be at least 3 characters long.';
           } else {
                loginUsernameError.textContent = '';
           }
